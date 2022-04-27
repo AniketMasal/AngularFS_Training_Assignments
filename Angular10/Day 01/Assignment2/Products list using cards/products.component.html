@@ -1,0 +1,15 @@
+<h2> Listing Products with cards </h2>
+
+<div class ="row">
+    <div *ngFor = "let products of ProductsArray">
+        <div class="card-block" style="border: 1px solid black;margin: 10px;">
+            <p>{{products.Pid}}</p>
+            <p>{{products.Pname}}</p>
+            <p>{{products.PPrice}}</p>
+            <p>{{products.PCategory}}</p>
+            <p>{{products.PQty}}</p>
+        </div>
+    </div>
+
+
+</div>
