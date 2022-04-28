@@ -1,0 +1,15 @@
+<p>Product category wise listing assignment!</p>
+
+<div *ngFor ="let item of Filterproducts">
+  <!-- <div *ngIf = "item.PCategory == Productcategory"> -->
+    <div style="border: 1px solid black; margin : 10px; width: 150px ;float: left;">
+      
+    <p>{{item.Pid}}</p>
+    <p>{{item.Pname}}</p>
+    <p>{{item.PPrice}}</p>
+    <p>{{item.PCategory}}</p>
+    </div>
+  <!-- </div> -->
+
+</div>
+
