@@ -1,0 +1,17 @@
+<h3>Pipe assignment with user details!</h3>
+<br>
+<hr/>
+<br>
+&nbsp;&nbsp;<button [hidden] = Ishidden  (click)="load_MoreUsers()" >Load More</button>
+
+<div *ngFor ="let User of UserArray | slice : Startindex : Endindex" >
+    <div style="border: 3px solid black; margin : 10px; width: 150px ;height : 200px ;float: left; text-align: center; box-shadow: 10px;">    
+    <p> Number  :  {{User.User_Number}}</p>
+    <p> Name  :  {{User.User_Name}}</p>
+    <p> Job  :  {{User.User_Job}}</p>
+    <p> Salary  :  {{User.User_Salary}}</p>
+    <p> Rating  :  {{User.User_rating | rating}} </p>
+    </div>
+
+</div>
+
