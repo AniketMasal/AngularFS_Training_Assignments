@@ -20,7 +20,7 @@ Salary Filter Property  : Min value : <input [(ngModel)]="filterminsal"  />
     </tr>
   
     
-    <tr *ngFor="let emp of EMPList |range : minSalary : minSalary">
+    <tr *ngFor="let emp of EMPList |range : minSalary : maxSalary">
         <td>{{emp.Emp_Number}}</td>
         <td>{{emp.Emp_Name}}</td>
         <td>{{emp.Emp_Job}}</td>
