@@ -1,0 +1,31 @@
+<h3>Pipe Assignment with parameters with pure pipe concept</h3>
+
+
+Salary Filter Property  : Min value : <input [(ngModel)]="filterminsal"  />
+ Max value  :  <input [(ngModel)]="filtermaxsal"  />
+
+ &nbsp;&nbsp;&nbsp;<button (click)="filterbutton_Click()">Filter Data</button>
+ <br>
+ <br>
+ <br>
+ <hr>
+
+<table border="2" width="400" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>EMP Number</th>
+      <th>EMP Name</th>
+      <th>EMP Job</th>
+      <th>EMP Salary</th>
+      <th>EMP Deptno</th>
+    </tr>
+  
+    
+    <tr *ngFor="let emp of EMPList |range : minSalary : minSalary">
+        <td>{{emp.Emp_Number}}</td>
+        <td>{{emp.Emp_Name}}</td>
+        <td>{{emp.Emp_Job}}</td>
+        <td>{{emp.Emp_Salary}}</td>
+        <td>{{emp.Emp_Deptno}}</td>
+        
+    </tr>
+  </table>
