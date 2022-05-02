@@ -1,0 +1,134 @@
+<style>
+    .bg1{ background-color :  lightblue;  }
+    .bg2{ background-color :  lightgreen;  }
+    .bg3{ background-color :  pink;  }
+  
+    .c1
+    {
+      color : dodgerblue;
+      border:1px solid dodgerblue;
+      width :  100px;
+      margin : 5px;
+      float : left;
+      text-align : center;
+      background-color : white;
+    }
+  
+    .c2
+    {
+       background-color: dodgerblue;
+       color : white;
+       margin: 0px;
+    }
+ 
+    
+    .c3
+    {
+      color : dodgerblue;
+      border:1px solid dodgerblue;
+      width :  500px;
+      height : 150px;
+      margin : 5px;
+      float : left;
+      text-align : center;
+      background-color : white;
+    }
+  
+    .c4
+    {
+       background-color: dodgerblue;
+       color : white;
+       margin: 0px;
+    }
+ 
+  </style>
+  
+  
+  <h3>Working with directives in Angular -- Assignemnt 1</h3>
+  <hr/>
+  
+<!--   With Dropdown menu 
+  Select Display Mode :
+  <select [(ngModel)]="displayMode">
+    <option>List</option>
+    <option>Table</option>
+    <option>Large Image </option>
+    <option>Small Image </option>
+    <option>Others</option>
+  </select> -->
+  
+
+
+  <div>
+    Display Mode :  <img   (mouseover)="Img_Click('List')"   src="../../assets/Images/List.png" width="40" height="20"/> &nbsp;
+     <img   (mouseover)="Img_Click('Small Image')"   src="../../assets/Images/Small Size.png" width="40" height="20"/> 
+    &nbsp;<img (mouseover)="Img_Click('Large Image')" src="../../assets/Images/Large Size.png" width="40" height="20"/> &nbsp;
+    <img (mouseover)="Img_Click('Table')"  src="../../assets/Images/Table.png" width="40" height="20" />
+</div>
+
+
+  <br>
+  <section  [ngSwitch]="displayMode">
+  
+    <!-- Content for List Mode -->
+       <article *ngSwitchCase=" 'List' ">
+      <ul>
+        <li  *ngFor="let item of ProductsArray">
+            Product Name :
+            <span style="color:blue;">{{item.Pname}}</span>&nbsp;&nbsp;&nbsp;
+            <span [ngStyle]="{ 'color': (item.PCategory == 'Category1' ? 'Red' : 'Green'), 'font-style': 'italic'}">{{item.PPrice}}</span>
+
+        </li>
+      </ul>
+    </article>
+   
+    <!-- Content for Table Mode -->
+      <article *ngSwitchCase=" 'Table' ">
+  
+      <table border="2" cellspacing="0" cellpadding="5" width="500">
+        <tr class="bg1">
+          <th>Product Name</th>
+          <th>Product Price</th>
+          <th>Product  Category</th>
+        </tr>
+  
+        <tr *ngFor="let item of ProductsArray; let i = index; let isEven = even; let isOdd = odd"
+            [ngClass]="{'bg2':isEven, 'bg3':isOdd}">
+         
+          <td>{{item.Pname}}</td>
+          <td>{{item.PPrice}}</td>
+          <td>{{item.PCategory}}</td>
+        </tr>
+  
+      </table>
+    </article>
+
+   <!-- Small image-->
+       <article *ngSwitchCase=" 'Small Image' ">
+  
+      <div class="c1" *ngFor="let item of ProductsArray">
+        <p  class="c2">{{item.Pname}}</p>
+        <span>{{item.PCategory}}</span>
+        <p>{{item.PPrice}}</p>
+        <img src="../../assets/Images/Product.png" img>
+        <br/>
+      </div>
+  
+     </article> 
+        <!-- Large image-->
+        <article *ngSwitchCase=" 'Large Image' ">
+  
+          <div class="c3" *ngFor="let item of ProductsArray">
+            <img src="../../assets/Images/Product.png" img>
+            <p  class="c4">{{item.Pname}}</p>
+            <span>{{item.PCategory}}</span>
+            <p>{{item.PPrice}}</p>
+
+            <br/>
+          </div>
+      
+         </article> 
+     
+ 
+     <article *ngSwitchDefault> This is default mode </article>
+  </section>
