@@ -1,0 +1,29 @@
+<style>
+    .Header{
+        border: 2px solid grey;
+        text-align: center;
+        margin : 10px;
+        padding : 10px;
+    }
+    .content{
+        float: left;
+        border: 2px solid green;
+        margin: 10 px;
+        padding: 10px;
+        align-items: center;
+        
+    }
+</style>
+<div class ="Header">
+        <button (click)="GetUserDetails()">Get User Details</button>
+</div>
+
+<div>
+    <div class="content" *ngFor="let item of UsersArray.data" >
+        <img src={{item.avatar}} height="80" width="100"  >
+        <div class="container">
+          <h4><b> {{item.first_name}}</b></h4> 
+          <p>{{item.email}}</p> 
+        </div>&nbsp;&nbsp;
+      </div>
+</div>
