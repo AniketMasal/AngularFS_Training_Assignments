@@ -1,0 +1,54 @@
+<style>
+    div{
+      
+      width: 540px;
+      border: 1px solid black;
+      margin: 20px;
+      margin-left: 400px;
+      text-align: center;
+      padding: 5px;
+    }
+
+    .bottom{
+
+    text-align: center;
+    }
+    
+    h2{
+        text-align: center;
+    }
+    </style>
+    
+    
+    <h2>Todo Input</h2>
+    
+    <div>
+      
+        <input type="text"  [(ngModel)]="inputItem"  placeholder="Add Todo"  /> &nbsp; <br><br>
+        <button (click)="addNew_click()">Add New Task</button>&nbsp;
+    
+    </div>
+    
+    
+    
+    <h2>Todo List</h2>
+    
+    <div *ngFor="let item of TasksList; let i = index;">
+        <span [ngStyle]="{ 'color': (item.isDone == true ? 'Red' : ''), 'text-decoration-line':(item.isDone == true ? 'line-through' : 'none')}">{{item.task}}</span>&nbsp;&nbsp;
+     
+          <input type="checkbox" [(ngModel)]="item.isDone" style="float : right" />&nbsp;&nbsp;
+        <a  (click)="delete_click(item.id)" style="float : right" href="javascript:void(0);">
+            <img src="../../assets/Images/delete.png" alt="" width="20" />
+          </a>&nbsp;&nbsp;&nbsp;
+          
+          <a  (click)="update_click(item.id)" style="float : right" href="javascript:void(0);">
+              <img src="../../assets/Images/edit.png" alt="" width="20" />
+            </a>&nbsp;&nbsp;
+           
+        
+    </div>
+    <div class="bottom">
+        <button (click)="DeleteDone_click()">Delete Done Task</button>&nbsp;
+        <button (click)="DeleteAll_click()">Delete All Task</button>&nbsp;<br><br><br>
+    </div>
+    
