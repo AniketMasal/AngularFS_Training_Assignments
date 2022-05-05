@@ -1,0 +1,32 @@
+{
+  "Employees": [
+    {
+      "empno": 1,
+      "empname": "Scott",
+      "empjob": "Developer",
+      "empsal": 2500,
+      "empdeptno": 10
+    },
+    {
+      "empno": 2,
+      "empname": "Dewald",
+      "empjob": "Developer",
+      "empsal": 3500,
+      "empdeptno": 20
+    },
+    {
+      "empno": 3,
+      "empname": "Stephen",
+      "empjob": "Manager",
+      "empsal": 4500,
+      "empdeptno": 10
+    },
+    {
+      "empno": 4,
+      "empname": "Add Emp",
+      "empjob": "Dev",
+      "empsal": "5000",
+      "empdeptno": "10"
+    }
+  ]
+}
