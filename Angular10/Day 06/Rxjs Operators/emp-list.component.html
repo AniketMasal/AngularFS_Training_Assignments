@@ -1,0 +1,49 @@
+<h3>Perform CRUD operations with remote data in Angular</h3>
+<hr/>
+
+<input type="text"  [(ngModel)]="ename"  placeholder="Employee Name"  />
+<input type="text"  [(ngModel)]="ejob"  placeholder="Employee Job"  />
+<input type="text"  [(ngModel)]="esal"  placeholder="Employee salary"  />
+<input type="text"  [(ngModel)]="edeptno"  placeholder="Employee Dept No"  />
+<br/><br/>
+<input type="button"  value="Get Students" (click)="getData_click()"  />
+<input type="button"  value="Add Student" (click)="addData_click()"  />
+<input type="button"  value="Update Student" (click)="updateData_click()"  />
+<input type="button"  value="Clear Fields" (click)="clearFields()"  />
+
+<hr/>
+<p> Filterization using Rxjs Operators</p>
+<input type="button" value ="Get Emp by Job" (click)="getEmpbyjob()" /><br><br>
+<input type="button" value ="Get Manager Name By deptartment" (click)="GetManagerByDepartment()"/><br><br>
+<input type="button" value ="Get Emp name with job" (click) ="GetAllEmpwithJob()" /><br><br>
+<input type="button" value ="Get Emp Not working for Specific Dept" (click)="GetEmpWithoutSpecificDept()"/><br><br>
+<input type="button" value ="sortByEmpSal" (click)="SortEmpBasedOnSal()"/><br><br>
+
+<hr/>
+
+<table border="2"   cellspacing="0">
+	<tr>
+	  <th>Employee No</th>
+	  <th>Employee Name</th>
+	  <th>Employee Job</th>
+	  <th>Employee Salary</th>
+	  <th>Employee Dept No</th>
+    <th></th>
+	</tr>
+
+	<tr *ngFor="let item of emparray">
+	  <td>{{item.empno}}</td>
+	  <td>{{item.empname}}</td>
+	  <td>{{item.empjob}}</td>
+	  <td>{{item.empsal}}</td>
+	  <td>{{item.empdeptno}}</td>
+    <td align="center">
+      <a href="javascript:void(0);" (click)="selectData_click(item.empno)">Select</a> |
+      <a href="javascript:void(0);" (click)="deleteData_click(item.empno)">Delete</a>
+    </td>
+	</tr>
+  </table>
+
+
+  <p> Json Data Resutl After Filter</p>
+  {{result | json}}
