@@ -1,0 +1,19 @@
+<div class="about-section">
+    <h1>Categories Page</h1>
+  </div>
+  
+  <h2 style="text-align:center">Our Prodcuts categories</h2>
+  <div class="row">
+
+    <div class="column" *ngFor ="let category of Categories">
+      <div class="card">
+        <img src={{category.Picture}} alt="Jane" style="width:50%; height:150px ; margin-left: auto; margin-right: auto; display: block;">
+        <div class="container">
+          <h2>{{category.Categrory}}</h2>
+          <a [routerLink]=" ['/details', category.Categrory] ">Details</a>
+        </div>
+      </div>
+    </div>
+  
+    </div>
+  
